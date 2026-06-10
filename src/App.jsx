@@ -1,5 +1,5 @@
-import Layout from "./components/Layout";
-import Vitrine from "./components/Vitrine";
+// import Layout from "./components/Layout"; Sai na semana 14
+// import Vitrine from "./components/Vitrine"; Sai na semana 14
 import "./App.css";
 
 /*
@@ -23,13 +23,35 @@ import "./App.css";
   }
 */
 
-// SEMANA 13 (ETAPA 2 - PASSO 1): Vitrine gerencia seu próprio estado
+/* SEMANA 13 (ETAPA 2 - PASSO 1): Vitrine gerencia seu próprio estado
 function App() {
   return (
     <Layout>
       <Vitrine />
     </Layout>
   );
-}
+} 
 
+export default App; */ //Sai para entrar na Semana 14
+
+
+// SEMANA 14 ( ETAPA DE CONFIGURAÇÃO DE ROTAS)
+
+import  { Routes, Route } from 'react-router-dom'
+import Layout from "./components/Layout";
+import Home from './pages/Home'
+import Detalhe from './pages/Detalhe';
+import NaoEncontrado from './pages/NotFound';
+
+function App() {
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/detalhe/:id" element={<Detalhe />} />
+        <Route path="*" element={<NaoEncontrado />} />
+      </Routes>
+    </Layout>
+  );
+}
 export default App;
