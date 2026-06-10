@@ -1,7 +1,5 @@
 /*
-  EVOLUÇÃO DO COMPONENTE VITRINE
-  ==============================
-
+  
   SEMANA 12 (ETAPA 1): Array fixo, sem estado
   --------
   import ProdutoCard from "./ProdutoCard";

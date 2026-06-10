@@ -59,7 +59,8 @@ src/
 |--------|------|--------|
 | 12 | Componentização — Layout, Vitrine, ProdutoCard, Botao, Selo | ✅ Concluída |
 | 13 | API real + Hooks (useState, useEffect) + Filtros dinâmicos | ✅ Concluída |
-| 14 | React Router — múltiplas páginas | 🔜 Em breve |
+| 14 | React Router — o estado muda | 🔜 Em breve |
+| 15 | Projeto Final | 🔜 Em breve |
 
 ---
 
