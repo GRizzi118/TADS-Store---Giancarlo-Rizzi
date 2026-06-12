@@ -59,8 +59,8 @@ src/
 |--------|------|--------|
 | 12 | Componentização — Layout, Vitrine, ProdutoCard, Botao, Selo | ✅ Concluída |
 | 13 | API real + Hooks (useState, useEffect) + Filtros dinâmicos | ✅ Concluída |
-| 14 | React Router — múltiplas páginas | 🔜 Em breve |
-| 14 | Projeto final | 🔜 Em breve |
+| 14 | React Router — múltiplas páginas | ✅ Concluída |
+| 15 | Projeto final | 🔜 Em breve |
 
 ---
 
@@ -82,4 +82,14 @@ src/
 - **Inputs controlados** — sincronizar estado com `<input>` e `<select>`
 - **Renderização condicional por estado** — mostrar "Carregando...", erro ou produtos
 - **Integração com API REST** — consumir dados da DummyJSON em tempo real
+
+### Semana 14
+- **React Router DOM** — instalação e configuração do `BrowserRouter` no `main.jsx`
+- **Rotas declarativas** — `<Routes>` e `<Route>` para mapear URLs a componentes
+- **`useParams`** — capturar parâmetros dinâmicos da URL (`/detalhe/:id`)
+- **`useNavigate`** — navegação programática (botão Voltar)
+- **`Link`** — navegação sem recarregar a página
+- **Página 404** — rota `path="*"` para URLs não encontradas
+- **Separação em páginas** — componentes `Home`, `Detalhe`, `Sobre` e `NotFound` em `src/pages/`
+- **Sem login nem rotas protegidas** — navegação pública em todas as rotas
 
