@@ -42,6 +42,8 @@ import Layout from "./components/Layout";
 import Home from './pages/Home'
 import Detalhe from './pages/Detalhe';
 import NaoEncontrado from './pages/NotFound';
+import Sobre from './pages/Sobre';
+
 
 function App() {
   return (
@@ -49,6 +51,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detalhe/:id" element={<Detalhe />} />
+        <Route path="/sobre" element={<Sobre />} />
         <Route path="*" element={<NaoEncontrado />} />
       </Routes>
     </Layout>
