@@ -57,9 +57,9 @@ function Vitrine() {
 
   return (
     <section>
-      <input value={busca}
+      <input className="campo-busca" value={busca}
         onChange={(e) => setBusca(e.target.value)}
-        placeholder="Buscar..." />
+        placeholder="Buscar produto..." />
       <div className="vitrine">
         {filtrados.map((p) => (
           <ProdutoCard key={p.id} produto={p} />
