@@ -1,6 +1,6 @@
 // import Layout from "./components/Layout"; Sai na semana 14
 // import Vitrine from "./components/Vitrine"; Sai na semana 14
-import "./App.css";
+// import "./App.css";
 
 /*
   SEMANA 12 (ETAPA 1): Array fixo em App.jsx
@@ -36,8 +36,8 @@ export default App; */ //Sai para entrar na Semana 14
 
 
 // SEMANA 14 ( ETAPA DE CONFIGURAÇÃO DE ROTAS)
-
-import  { Routes, Route } from 'react-router-dom'
+import "./App.css";
+import  { Routes, Route } from 'react-router-dom';
 import Layout from "./components/Layout";
 import Home from './pages/Home'
 import Detalhe from './pages/Detalhe';

@@ -109,3 +109,26 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+
+/* estiilos dos botoes de navegação do cabeçalho/* */
+.cabecalho nav {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.cabecalho nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  padding: 6px 32px;
+  background: #003366;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.cabecalho nav a:hover {
+  background: #004488;
+}

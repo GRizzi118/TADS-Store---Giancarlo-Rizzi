@@ -51,10 +51,3 @@ function ProdutoCard({ produto }) {
 
 export default ProdutoCard;
 
-
-import { Link } from "react-router-dom";
-
-<Link to={`/produto/${id}`}> 
-  Ver detalhes
-</Link> 
-
