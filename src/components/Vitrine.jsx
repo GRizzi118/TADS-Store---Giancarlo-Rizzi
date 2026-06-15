@@ -33,6 +33,7 @@ function Vitrine() {
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
   const [busca, setBusca] = useState("");
+  const [categoria, setCategoria] = useState("todos");
 
   useEffect(() => {
     fetch("https://dummyjson.com/products?limit=12")
@@ -50,23 +51,56 @@ function Vitrine() {
   if (carregando) return <p>Carregando produtos...</p>;
   if (erro) return <p>{erro}</p>;
 
-  // lista derivada: filtra antes de mostrar
-  const filtrados = produtos.filter((p) =>
-    p.title.toLowerCase().includes(busca.toLowerCase())
-  );
+  //lista por categorias'
+  const categorias = [...new Set(produtos.map((p) => p.category))];
 
+  // lista derivada: filtra antes de mostrar
+  const filtrados = produtos.filter((p) => {
+  const bateNome = p.title.toLowerCase().includes(busca.toLowerCase());
+  const bateCategoria = categoria === "" || p.category === categoria;
+  return bateNome && bateCategoria; 
+  });
+
+  
+  
   return (
-    <section>
-      <input className="campo-busca" value={busca}
-        onChange={(e) => setBusca(e.target.value)}
-        placeholder="Buscar produto..." />
+  <section className="vitrine-container">
+    <input
+      className="campo-busca"
+      value={busca}
+      onChange={(e) => setBusca(e.target.value)}
+      placeholder="Buscar produto..."
+    />
+
+    <div className="filtros-categoria">
+      <button
+        className={`btn-categoria ${categoria === "" ? "ativo" : ""}`}
+        onClick={() => setCategoria("")}
+      >
+        Todas
+      </button>
+      {categorias.map((cat) => (
+        <button
+          key={cat}
+          className={`btn-categoria ${categoria === cat ? "ativo" : ""}`}
+          onClick={() => setCategoria(cat)}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    {filtrados.length === 0 ? (
+      <p className="mensagem">Nenhum produto encontrado.</p>
+    ) : (
       <div className="vitrine">
         {filtrados.map((p) => (
           <ProdutoCard key={p.id} produto={p} />
         ))}
       </div>
-    </section>
-  );
+    )}
+  </section>
+);
 }
 
 export default Vitrine;

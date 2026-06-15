@@ -80,6 +80,35 @@ body {
   box-shadow: 0 0 0 3px rgba(11, 110, 131, 0.1);
 }
 
+
+.filtros-categoria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-categoria {
+  padding: 6px 16px;
+  border: 1px solid #2563eb ;
+  border-radius: 20px;
+  background: transparent;
+  color: #2563eb;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-categoria:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.btn-categoria.ativo {
+  background: #2563eb;
+  color: #fff;
+}
+
+
 /* Vitrine */
 .vitrine {
   display: grid;
