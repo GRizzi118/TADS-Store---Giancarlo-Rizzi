@@ -226,7 +226,7 @@ body {
   font-size: 1.15rem;
 }
 
-/* Selo */
+
 .selo {
   display: inline-block;
   background: #rgba(34, 197, 94, 0.1);
@@ -236,7 +236,7 @@ body {
   border-radius: 20px;
 }
 
-/* Botão */
+
 .botao {
   margin-top: 10px;
   width: 100%;
@@ -256,7 +256,7 @@ body {
   background:#1d4ed8;
 }
 
-/* Rodapé */
+
 .rodape {
   background: #0b6e83;
   color: #fff;
@@ -265,6 +265,13 @@ body {
   font-size: 0.85rem;
   opacity: 0.9;
 }
+
+.nav-ativo {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
 
 /*melhora na estilização da barra de navegação do cabeçalho*/
 .campo-busca,

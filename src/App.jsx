@@ -41,8 +41,7 @@ import  { Routes, Route } from 'react-router-dom';
 import Layout from "./components/Layout";
 import Home from './pages/Home'
 import Detalhe from './pages/Detalhe';
-import NaoEncontrado from './pages/NotFound';
-import Sobre from './pages/Sobre';
+import NaoEncontrado from './pages/NaoEncontrado';
 
 
 function App() {
@@ -50,8 +49,7 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/detalhe/:id" element={<Detalhe />} />
-        <Route path="/sobre" element={<Sobre />} />
+        <Route path="/produto/:id" element={<Detalhe />} />
         <Route path="*" element={<NaoEncontrado />} />
       </Routes>
     </Layout>

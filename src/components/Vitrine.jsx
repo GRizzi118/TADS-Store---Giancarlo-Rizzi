@@ -33,7 +33,7 @@ function Vitrine() {
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
   const [busca, setBusca] = useState("");
-  const [categoria, setCategoria] = useState("todos");
+  const [categoria, setCategoria] = useState("");
 
   useEffect(() => {
     fetch("https://dummyjson.com/products?limit=12")

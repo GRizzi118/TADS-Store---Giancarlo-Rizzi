@@ -1,3 +1,6 @@
+
+/* SEMANA 13: Página de detalhes do produto
+
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; 
 import { useNavigate } from "react-router-dom";
@@ -34,3 +37,36 @@ return (
 );
 }
 export default Detalhe;
+*/
+
+// SEMANA 14: Configuração de rotas com React Router
+
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+
+function Detalhe() {
+  const { id } = useParams();
+  const [produto, setProduto] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://dummyjson.com/products/${id}`)
+      .then((res) => res.json())
+      .then((dados) => setProduto(dados));
+  }, [id]);
+
+  if (!produto) return <p>Carregando...</p>;
+
+  return (
+    <article>
+      <Link to="/">← Voltar</Link>
+      <h1>{produto.title}</h1>
+      <img src={produto.thumbnail} alt={produto.title} />
+      <p>R$ {produto.price}</p>
+    </article>
+  );
+}
+
+export default Detalhe;
+
+
+
