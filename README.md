@@ -1,3 +1,14 @@
+Description:
+🛒 TADS Store - Loja virtual em React com autenticação, 
+rotas protegidas e integração com API. Projeto integrador 
+das disciplinas de Desenvolvimento Front-end.
+
+Topics:
+react, javascript, vite, e-commerce, routing, authentication, 
+context-api, hooks, responsive-design
+
+
+
 # 🛒 TADS Store
 
 **Projeto Integrador — Desenvolvimento Front-end**
