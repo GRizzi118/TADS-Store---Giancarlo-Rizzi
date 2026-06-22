@@ -27,7 +27,7 @@ A **TADS Store** é uma loja virtual (e-commerce) construída em React, desenvol
 
 - [React](https://react.dev/) — biblioteca de interface
 - [Vite](https://vite.dev/) — bundler e servidor de desenvolvimento
-- [CSS puro] — estilização dos componentes
+- [CSS] — estilização dos componentes
 - [DummyJSON](https://dummyjson.com/) — API para dados de produtos
 
 ---
