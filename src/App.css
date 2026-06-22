@@ -356,6 +356,7 @@ body {
 }
 
 .detalhe-info h1 {
+  color: #1f2937;
   font-size: 1.8rem;
   margin: 0 0 12px 0;
   line-height: 1.2;
@@ -583,6 +584,331 @@ body {
   color: #ffffff;
 }
 
+/* SEMANA 15: LOGIN E AUTENTICAÇÃO */
+
+/* Controle de autenticação no cabeçalho */
+.nav-auth {
+  margin-left: 16px;
+}
+
+.btn-sair {
+  background: #dc2626;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-sair:hover {
+  background: #b91c1c;
+}
+
+/* Contêiner da página de login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 20px;
+  background: #f9fafb;
+}
+
+/* Card de login */
+.login-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-card h1 {
+  color: #1f2937;
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Formulário de login */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.input-field {
+  padding: 10px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.input-field:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* Mensagem de erro */
+.mensagem-erro {
+  color: #dc2626;
+  font-size: 0.9rem;
+  padding: 8px;
+  background: #fee2e2;
+  border-radius: 4px;
+  margin-top: -8px;
+}
+
+/* Botão de login */
+.botao-login {
+  padding: 12px 16px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.botao-login:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.botao-login:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Link de voltar */
+.link-voltar {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: 16px;
+}
+
+.link-voltar a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-voltar a:hover {
+  text-decoration: underline;
+}
+
+/* Contêiner de Minha Conta */
+.minha-conta-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 200px);
+  padding: 40px 20px;
+  background: #f9fafb;
+}
+
+.minha-conta-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.minha-conta-card h1 {
+  color: #1f2937;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 16px;
+}
+
+.minha-conta-card h2 {
+  color: #374151;
+  font-size: 1.3rem;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+/* Informação do usuário */
+.usuario-info {
+  background: #dbeafe;
+  border-left: 4px solid #2563eb;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+
+.saudacao {
+  color: #1e40af;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Seções de informações */
+.info-secao {
+  margin-bottom: 24px;
+}
+
+.info-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.info-item strong {
+  color: #374151;
+}
+
+.info-item span {
+  color: #6b7280;
+}
+
+.status-ativo {
+  color: #059669;
+  font-weight: 600;
+}
+
+.texto-vazio {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Ações no rodapé */
+.acoes {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 2px solid #e5e7eb;
+}
+
+.botao {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  flex: 1;
+}
+
+.botao-primario {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.botao-primario:hover {
+  background: #1d4ed8;
+}
+
+.botao-secundario {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.botao-secundario:hover {
+  background: #d1d5db;
+}
+
+.botao-logout {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.botao-logout:hover {
+  background: #b91c1c;
+}
+
+/* Contêiner do carrinho */
+.carrinho-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 40px 20px;
+  background: #f9fafb;
+}
+
+.carrinho-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.carrinho-card h1 {
+  color: #1f2937;
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.carrinho-vazio {
+  margin-bottom: 24px;
+}
+
+.carrinho-vazio .emoji {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.carrinho-vazio .titulo {
+  color: #374151;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.carrinho-vazio .descricao {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.info-util {
+  background: #e0e7ff;
+  border-left: 4px solid #2563eb;
+  padding: 12px;
+  border-radius: 6px;
+  color: #1e40af;
+  margin-top: 24px;
+  font-size: 0.9rem;
+}
+
 /* Responsivo para detalhes */
 @media (max-width: 768px) {
   .detalhe-container {
@@ -608,6 +934,37 @@ body {
 
   .pagina-nao-encontrada h1 {
     font-size: 1.8rem;
+  }
+
+  /* Login responsivo */
+  .login-card {
+    padding: 24px;
+  }
+
+  .login-card h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Minha conta responsivo */
+  .minha-conta-card {
+    padding: 20px;
+  }
+
+  .minha-conta-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .info-item {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .acoes {
+    flex-direction: column;
+  }
+
+  /* Cabeçalho responsivo */
+  .nav-auth {
+    margin-left: 0;
   }
 }
 

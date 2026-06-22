@@ -30,19 +30,18 @@ function App() {
       <Vitrine />
     </Layout>
   );
-} 
+}
 
 export default App; */ //Sai para entrar na Semana 14
 
 
-// SEMANA 14 ( ETAPA DE CONFIGURAÇÃO DE ROTAS)
+/* SEMANA 14 (ETAPA 3 - ROTEAMENTO SPA)
 import "./App.css";
-import  { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Layout from "./components/Layout";
 import Home from './pages/Home'
 import Detalhe from './pages/Detalhe';
 import NaoEncontrado from './pages/NaoEncontrado';
-
 
 function App() {
   return (
@@ -50,6 +49,40 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/produto/:id" element={<Detalhe />} />
+        <Route path="*" element={<NaoEncontrado />} />
+      </Routes>
+    </Layout>
+  );
+}
+export default App;
+*/ // Sai para entrar na Semana 15
+
+// SEMANA 15 (ETAPA 4 - AUTENTICAÇÃO E ROTAS PROTEGIDAS)
+import "./App.css";
+import { Routes, Route } from 'react-router-dom';
+import Layout from "./components/Layout";
+import Home from './pages/Home'
+import Detalhe from './pages/Detalhe';
+import NaoEncontrado from './pages/NaoEncontrado';
+import Login from './pages/Login';
+import MinhaConta from './pages/MinhaContа';
+import Carrinho from './pages/Carrinho';
+import PrivateRoute from './components/PrivateRoute';
+
+function App() {
+  return (
+    <Layout>
+      <Routes>
+        {/* Rotas públicas */}
+        <Route path="/" element={<Home />} />
+        <Route path="/produto/:id" element={<Detalhe />} />
+        <Route path="/login" element={<Login />} />
+
+        {/* Rotas protegidas (redirecionam ao login se não autenticado) */}
+        <Route path="/minha-conta" element={<PrivateRoute><MinhaConta /></PrivateRoute>} />
+        <Route path="/carrinho" element={<PrivateRoute><Carrinho /></PrivateRoute>} />
+
+        {/* Rota 404 (deve ser a última) */}
         <Route path="*" element={<NaoEncontrado />} />
       </Routes>
     </Layout>
