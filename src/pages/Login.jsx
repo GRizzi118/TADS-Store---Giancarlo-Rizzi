@@ -1,6 +1,6 @@
 // SEMANA 15 (ETAPA 4): Tela de Login com formulário controlado
-// Login simulado: admin / 123456
-// Após login bem-sucedido, redireciona para /minha-conta
+// Login simulado: aluno / 1234
+// Após validação bem-sucedida, chama entrar() e redireciona para /minha-conta
 
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
@@ -10,8 +10,6 @@ function Login() {
   // Estados para armazenar valores do formulário
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
-  const [erro, setErro] = useState("");
-  const [carregando, setCarregando] = useState(false);
 
   // Hook para contexto de autenticação
   const { entrar } = useAuth();
@@ -20,41 +18,24 @@ function Login() {
   const navegar = useNavigate();
 
   // Função chamada ao enviar o formulário
-  const aoEnviar = (e) => {
+  function aoEnviar(e) {
     e.preventDefault();
-    setErro("");
 
-    // Validação simples
-    if (!usuario.trim() || !senha.trim()) {
-      setErro("Usuário e senha são obrigatórios.");
-      return;
+    // Validação de credenciais (simulado: aluno / 1234)
+    if (usuario === "aluno" && senha === "1234") {
+      // Login bem-sucedido: marca como logado
+      entrar();
+      // Redireciona para minha-conta
+      navegar("/minha-conta");
     }
-
-    setCarregando(true);
-
-    // Simula delay da requisição
-    setTimeout(() => {
-      // Tenta fazer login com as credenciais fornecidas
-      const sucesso = entrar(usuario, senha);
-
-      if (sucesso) {
-        // Login bem-sucedido, redireciona para minha-conta
-        navegar("/minha-conta");
-      } else {
-        // Credenciais inválidas
-        setErro("Usuário ou senha inválidos. Tente: admin / 123456");
-        setSenha("");
-      }
-
-      setCarregando(false);
-    }, 500);
-  };
+  }
 
   return (
     <section className="login-container">
       <div className="login-card">
         <h1>🔐 Fazer Login</h1>
 
+        {/* Formulário controlado com campos de entrada */}
         <form onSubmit={aoEnviar} className="login-form">
           {/* Campo de usuário */}
           <div className="form-group">
@@ -65,7 +46,6 @@ function Login() {
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}
               placeholder="Usuário"
-              disabled={carregando}
               className="input-field"
             />
           </div>
@@ -79,21 +59,16 @@ function Login() {
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               placeholder="Senha"
-              disabled={carregando}
               className="input-field"
             />
           </div>
 
-          {/* Mensagem de erro */}
-          {erro && <p className="mensagem-erro">❌ {erro}</p>}
-
           {/* Botão de envio */}
           <button
             type="submit"
-            disabled={carregando}
             className="botao-login"
           >
-            {carregando ? "⏳ Entrando..." : "🔓 Entrar"}
+            🔓 Entrar
           </button>
         </form>
 

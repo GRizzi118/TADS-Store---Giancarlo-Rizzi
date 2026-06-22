@@ -38,22 +38,13 @@ function Cabecalho({ titulo, subtitulo }) {
 export default Cabecalho;
 */ // Sai para entrar na Semana 15
 
-// SEMANA 15 - Autenticação: Entrar/Sair no cabeçalho, links para Minha Conta e Carrinho
-import { NavLink, useNavigate } from 'react-router-dom';
+// SEMANA 15 - Autenticação: Entrar/Sair no cabeçalho
+import { NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 function Cabecalho({ titulo, subtitulo }) {
   // Hook para acessar dados de autenticação
-  const { logado, usuario, sair } = useAuth();
-
-  // Hook para navegação programática
-  const navegar = useNavigate();
-
-  // Função para fazer logout
-  const aoSair = () => {
-    sair();
-    navegar("/");
-  };
+  const { logado, sair } = useAuth();
 
   return (
     <header className="cabecalho">
@@ -64,30 +55,14 @@ function Cabecalho({ titulo, subtitulo }) {
           Loja
         </NavLink>
 
-        {/* Links protegidos: só aparecem se logado */}
-        {logado && (
-          <>
-            <NavLink to="/carrinho" className={({ isActive }) => isActive ? "nav-ativo" : ""}>
-              🛒 Carrinho
-            </NavLink>
-            <NavLink to="/minha-conta" className={({ isActive }) => isActive ? "nav-ativo" : ""}>
-              👤 {usuario}
-            </NavLink>
-          </>
-        )}
-
         {/* Controle de Entrar/Sair */}
-        <div className="nav-auth">
-          {logado ? (
-            <button onClick={aoSair} className="btn-sair">
-              🚪 Sair
-            </button>
-          ) : (
-            <NavLink to="/login" className={({ isActive }) => isActive ? "nav-ativo" : ""}>
-              🔐 Entrar
-            </NavLink>
-          )}
-        </div>
+        {logado ? (
+          <button onClick={sair} className="btn-sair">
+            Sair
+          </button>
+        ) : (
+          <Link to="/login">Entrar</Link>
+        )}
       </nav>
     </header>
   );

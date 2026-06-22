@@ -67,7 +67,7 @@ import NaoEncontrado from './pages/NaoEncontrado';
 import Login from './pages/Login';
 import MinhaConta from './pages/MinhaContа';
 import Carrinho from './pages/Carrinho';
-import PrivateRoute from './components/PrivateRoute';
+import RotaPrivada from './components/RotaPrivada';
 
 function App() {
   return (
@@ -79,8 +79,12 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         {/* Rotas protegidas (redirecionam ao login se não autenticado) */}
-        <Route path="/minha-conta" element={<PrivateRoute><MinhaConta /></PrivateRoute>} />
-        <Route path="/carrinho" element={<PrivateRoute><Carrinho /></PrivateRoute>} />
+        <Route path="/minha-conta" element={
+          <RotaPrivada><MinhaConta /></RotaPrivada>
+        } />
+        <Route path="/carrinho" element={
+          <RotaPrivada><Carrinho /></RotaPrivada>
+        } />
 
         {/* Rota 404 (deve ser a última) */}
         <Route path="*" element={<NaoEncontrado />} />
