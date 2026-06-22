@@ -39,16 +39,28 @@ Acesse `http://localhost:5173` no navegador.
 
 ```
 src/
-├── App.jsx               # Componente raiz — monta Layout + Vitrine
-├── App.css               # Estilos globais da aplicação
-└── components/
-    ├── Layout.jsx        # Envolve children entre Cabeçalho e Rodapé
-    ├── Cabecalho.jsx     # Topo da página com título e subtítulo
-    ├── Rodape.jsx        # Rodapé com ano dinâmico
-    ├── Vitrine.jsx       # Grid de produtos com filtros (Semana 13)
-    ├── ProdutoCard.jsx   # Card individual de produto
-    ├── Botao.jsx         # Botão reutilizável
-    └── Selo.jsx          # Etiqueta de destaque (ex.: Frete Grátis)
+├── App.jsx                          # Rotas principais (públicas + protegidas)
+├── App.css                          # Estilos globais da aplicação
+├── main.jsx                         # Entry point com AuthProvider (Semana 15)
+├── contexts/
+│   └── AuthContext.jsx              # Context global de autenticação (Semana 15)
+├── components/
+│   ├── Layout.jsx                   # Envolve children entre Cabeçalho e Rodapé
+│   ├── Cabecalho.jsx                # Header com controle Entrar/Sair (Semana 15)
+│   ├── Rodape.jsx                   # Rodapé com ano dinâmico
+│   ├── Vitrine.jsx                  # Grid de produtos com filtros (Semana 13)
+│   ├── ProdutoCard.jsx              # Card individual de produto
+│   ├── RotaPrivada.jsx              # Wrapper para rotas protegidas (Semana 15)
+│   ├── Botao.jsx                    # Botão reutilizável
+│   └── Selo.jsx                     # Etiqueta de destaque (ex.: Frete Grátis)
+└── pages/
+    ├── Home.jsx                     # Página inicial com Vitrine (pública)
+    ├── Detalhe.jsx                  # Detalhe do produto (pública)
+    ├── Login.jsx                    # Formulário de login (Semana 15)
+    ├── MinhaConta.jsx               # Área protegida (Semana 15)
+    ├── Carrinho.jsx                 # Carrinho protegido (Semana 15)
+    ├── Sobre.jsx                    # Página sobre
+    └── NaoEncontrado.jsx            # Página 404 (rota catch-all)
 ```
 
 ---
@@ -59,8 +71,18 @@ src/
 |--------|------|--------|
 | 12 | Componentização — Layout, Vitrine, ProdutoCard, Botao, Selo | ✅ Concluída |
 | 13 | API real + Hooks (useState, useEffect) + Filtros dinâmicos | ✅ Concluída |
-| 14 | React Router — múltiplas páginas | ✅ Concluída |
-| 15 | Projeto final | 🔜 Em breve |
+| 14 | React Router — múltiplas páginas (SPA) | ✅ Concluída |
+| 15 | Autenticação e rotas protegidas — Projeto Final (Etapa 4) | ✅ Concluída |
+
+---
+
+## Credenciais de Teste
+
+Para acessar as áreas protegidas (Minha Conta, Carrinho), use:
+```
+Usuário: aluno
+Senha:   1234
+```
 
 ---
 
@@ -91,5 +113,17 @@ src/
 - **`Link`** — navegação sem recarregar a página
 - **Página 404** — rota `path="*"` para URLs não encontradas
 - **Separação em páginas** — componentes `Home`, `Detalhe`, `Sobre` e `NotFound` em `src/pages/`
-- **Sem login nem rotas protegidas** — navegação pública em todas as rotas
+- **Navegação SPA completa** — fluxo de usuário sem recarregar a página
+
+### Semana 15
+- **Context API** — criação de `AuthContext.jsx` para estado global de autenticação
+- **`useState` com lazy initialization** — `useState(() => localStorage.getItem("logado") === "true")` para persistência da sessão
+- **`localStorage`** — guardar estado de login do usuário para permanecer autenticado ao recarregar a página
+- **Formulários controlados** — componente `Login.jsx` com `useState` para usuário e senha sincronizados com inputs
+- **Rotas protegidas** — componente `RotaPrivada.jsx` que bloqueia acesso e redireciona ao login
+- **`useAuth` hook customizado** — atalho para acessar contexto de autenticação em qualquer componente (`useContext`)
+- **Redirecionamento condicional** — componente `<Navigate to="/login" />` para usuários não autenticados
+- **Logout com limpeza de estado** — remover sessão do localStorage e resetar estado de autenticação
+- **Controle de visualização** — mostrar/esconder elementos (botão "Entrar" vs "Sair") conforme autenticação
+- **Integração completa** — unir as 4 etapas (componentes, hooks/API, rotas, autenticação) em uma aplicação funcional
 
