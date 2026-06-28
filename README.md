@@ -15,6 +15,10 @@ context-api, hooks, responsive-design
 Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas (TADS) — IFES
 Aluno: **Giancarlo Mercês Rizzi**
 
+## 🔗 Demo
+
+https://tads-store-giancarlo-rizzi.vercel.app
+
 ---
 
 ## Sobre o Projeto
@@ -23,16 +27,18 @@ A **TADS Store** é uma loja virtual (e-commerce) construída em React, desenvol
 
 ---
 
-## Tecnologias
+## 🛠️ Tecnologias
 
-- [React](https://react.dev/) — biblioteca de interface
+- [React 19](https://react.dev/) — biblioteca de interface
 - [Vite](https://vite.dev/) — bundler e servidor de desenvolvimento
+- [React Router v7](https://reactrouter.com/) — roteamento SPA
+- Context API — gerenciamento global de autenticação
 - CSS puro — estilização dos componentes
 - [DummyJSON](https://dummyjson.com/) — API para dados de produtos
 
 ---
 
-## Como Executar
+## ▶️ Como Executar
 
 ```bash
 # Instalar dependências
@@ -40,6 +46,12 @@ npm install
 
 # Iniciar servidor de desenvolvimento
 npm run dev
+
+# Gerar build de produção
+npm run build
+
+# Testar build de produção localmente
+npm run preview
 ```
 
 Acesse `http://localhost:5173` no navegador.
@@ -76,6 +88,17 @@ src/
 
 ---
 
+## ✨ Funcionalidades
+
+- Catálogo com busca e filtro por categoria
+- Página de detalhe do produto com dados da API
+- Login com autenticação via Context API
+- Rotas protegidas (Minha Conta, Carrinho)
+- Sessão persistida no `localStorage`
+- Página 404 personalizada
+
+---
+
 ## Funcionalidades por Semana
 
 | Semana | Tema | Status |
@@ -84,6 +107,7 @@ src/
 | 13 | API real + Hooks (useState, useEffect) + Filtros dinâmicos | ✅ Concluída |
 | 14 | React Router — múltiplas páginas (SPA) | ✅ Concluída |
 | 15 | Autenticação e rotas protegidas — Projeto Final (Etapa 4) | ✅ Concluída |
+| 16 | Qualidade, build de produção e deploy | ✅ Concluída |
 
 ---
 
@@ -137,4 +161,11 @@ Senha:   1234
 - **Logout com limpeza de estado** — remover sessão do localStorage e resetar estado de autenticação
 - **Controle de visualização** — mostrar/esconder elementos (botão "Entrar" vs "Sair") conforme autenticação
 - **Integração completa** — unir as 4 etapas (componentes, hooks/API, rotas, autenticação) em uma aplicação funcional
+
+### Semana 16
+- **Checklist de qualidade** — remoção de `console.log`, código comentado e componentes não utilizados
+- **Build de produção** — `npm run build` gera a pasta `dist/` com arquivos minificados e otimizados pelo Vite
+- **Deploy** — publicação na Vercel (via GitHub) ou Netlify (arrastar `dist/`)
+- **Redirecionamento SPA** — `vercel.json` (Vercel) e `public/_redirects` (Netlify) para que rotas como `/produto/5` funcionem ao recarregar a página
+- **README profissional** — documentação com demo link, tecnologias, instruções e funcionalidades para portfólio
 
